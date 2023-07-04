@@ -2,7 +2,6 @@
 fetch ('http://localhost:5678/api/works')
     .then (data => data.json())
     .then(jsonListWorks => {
-        //Boucle for mise dans une fonction pour être apellé plus tard
         function generateWorks(jsonListWorks){
             for (let i = 0; i < jsonListWorks.length; i++){
 
@@ -24,33 +23,33 @@ fetch ('http://localhost:5678/api/works')
             };
         };    
     generateWorks(jsonListWorks);
-//Fonction filterWorks pour créer un tableau de pièces filtrées selon la catégorieId
-    const filterWorks = (categoryId) => {
-        const filteredWorks = jsonListWorks.filter(jsonListWork => jsonListWork.categoryId === categoryId);
-        generateWorks(filteredWorks);
-    };
-//Appel de la fonction generateWorks au click sur "All" 
+
+//reset gallery by click on all
     const noFilter = document.querySelector("#all");
-    noFilter.addEventListener("click", function (){
-        document.querySelector(".gallery").innerHTML = "";
+    noFilter.addEventListener("click", function (){ 
+        document.querySelector(".gallery").innerHTML = "";     
         generateWorks(jsonListWorks);
     });
-//Appel de la fonction filterWorks avec argument différent pour chaque bouton
+
+//Function that generate works filtered by categoryId
+const filterWorks = (categoryId) => {
+    const filteredWorks = jsonListWorks.filter(jsonListWork => jsonListWork.categoryId === categoryId);
+    document.querySelector(".gallery").innerHTML = "";
+    generateWorks(filteredWorks);
+};
+//call filterworks with different required categoryId 
     const filterItemsButton = document.querySelector("#items");
-    filterItemsButton.addEventListener("click", function (){
-        document.querySelector(".gallery").innerHTML = "";
+    filterItemsButton.addEventListener("click", function (){      
         filterWorks(1);
     });
 
     const filterAppartButton = document.querySelector("#appartements");
-    filterAppartButton.addEventListener("click", function (){
-        document.querySelector(".gallery").innerHTML = "";
+    filterAppartButton.addEventListener("click", function (){       
         filterWorks(2);
     });
 
     const filterHotelsButton = document.querySelector("#hotelsRestaurants");
-    filterHotelsButton.addEventListener("click", function (){
-        document.querySelector(".gallery").innerHTML = "";
+    filterHotelsButton.addEventListener("click", function (){      
         filterWorks(3);
     });
 

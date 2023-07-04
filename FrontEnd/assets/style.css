@@ -28,8 +28,20 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
+header, body{
+	background-color: #FFFEF8;
+}
+
+footer {
+	background-color: white;
+	
+	
+}
+
 body {
 	line-height: 1;
+	
 }
 ol, ul {
 	list-style: none;
@@ -58,6 +70,16 @@ header {
 	justify-content: space-between;
 	margin: 50px 0
 }
+
+nav a{
+	text-decoration: none;
+    color: black;
+}
+
+nav div a:visited{
+    text-decoration: none;
+}
+
 section {
 	margin: 50px 0
 }
@@ -95,9 +117,10 @@ nav li {
 	font-size: 1.2em;
 }
 
-li:hover {
+li a:hover {
 	color: #B1663C;
 }
+
 #introduction {
 	display: flex;
 	align-items: center;
@@ -213,4 +236,86 @@ footer nav ul {
 	justify-content: flex-end;
 	margin: 2em
 }
+
+/* style for login page*/
+.loginSection{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	height: 60vh;
+}
+
+.loginSection form{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.loginSection h1{
+	font-weight: normal;
+	color: #1D6154;
+	margin-bottom: 20px;
+	
+}
+
+.logField{
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	margin: 10px;
+	gap: 5px;
+}
+
+.logField input{
+	width: 365px;
+	height: 45px;
+	border: none;
+	box-shadow: 1px 1px 5px 1px rgba(197,187,187,0.43);
+	margin-bottom: 10px;
+}
+
+.logButton{
+	font-size: 16px;
+	font-weight: bold;
+	width: 180px;
+	height: 40px;
+	border-radius: 25px;
+	padding: 5px;
+	border: none;
+	background-color: #1D6154;
+	color: white;
+	font-family: 'Work Sans';
+	margin: 20px;
+}
+
+.logButton:hover{
+	background-color: white;
+	color:#1D6154;
+	border: solid 1px;
+	border-color: #1D6154;
+}
+
+.forgotPassword{
+	margin-top: 10px;
+	color: black;
+}
+
+.forgotPassword:visited{
+	color: black;
+}
+
+.footerLogin{
+	border: solid 1px black;
+	position:absolute;
+    bottom:0;  
+	right: 0;
+ 	width:100%;
+	margin: 0px;
+}
+/* Edit mode */	
+
+/* Edit mode end*/
+
+
 

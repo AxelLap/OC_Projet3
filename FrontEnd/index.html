@@ -12,13 +12,14 @@
 	<script src="script.js" defer></script>
 </head>
 <body>
+<div class="editBar"></div>
 <header>
 	<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
 	<nav>
 		<ul>
-			<li>projets</li>
+			<li><a href="index.html">projets</a></li>
 			<li>contact</li>
-			<li>login</li>
+			<li><a href="login.html">login</a></li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -26,7 +27,8 @@
 <main>
 	<section id="introduction">
 		<figure>
-			<img src="./assets/images/sophie-bluel.png" alt="">
+			<img src="./assets/images/sophie-bluel.png" alt="Sophie bluel Designer">
+			<figcaption class="edit-btn"></figcaption>
 		</figure>
 		<article>
 			<h2>Designer d'espace</h2>
@@ -37,14 +39,18 @@
 	</section>
 
 	<section id="portfolio">
-		<h2>Mes Projets</h2>
+		<h2>Mes Projets<span class="edit-btn"></span></h2>
 		<div class="categoryFilters">
 			<button class="btn-filter" id="all">Tous</button>
 			<button class="btn-filter" id="items">Objets</button>
 			<button class="btn-filter" id="appartements">Appartements</button>
 			<button class="btn-filter" id="hotelsRestaurants">Hôtels & restaurants</button>
 		</div>
+
 		<div class="gallery"></div>
+
+		
+
 	</section>
 
 	<section id="contact">
