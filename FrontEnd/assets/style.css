@@ -35,8 +35,11 @@ header, body{
 
 footer {
 	background-color: white;
-	
-	
+	height: 5em;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
 }
 
 body {
@@ -62,9 +65,11 @@ table {
 body {
 	max-width: 1140px;
 	margin:auto;
-	font-family: 'Work Sans' ;
+	margin-top: 60px;
 	font-size: 14px;
+	font-family: 'Work Sans';
 }
+
 header {
 	display: flex;
 	justify-content: space-between;
@@ -81,7 +86,7 @@ nav div a:visited{
 }
 
 section {
-	margin: 50px 0
+	margin: 50px 0px 5px 0px;
 }
 
 h1{
@@ -121,6 +126,15 @@ li a:hover {
 	color: #B1663C;
 }
 
+.editIconDark{
+	height: 20px;
+	width: 20px;
+	margin: 0px;
+	align-self: flex-start;
+	position: relative;
+	right: 180px;
+}
+
 #introduction {
 	display: flex;
 	align-items: center;
@@ -144,9 +158,10 @@ li a:hover {
 #introduction p {
 	margin-bottom: 0.5em;
 }
+
+
 #portfolio h2 {
 	text-align: center;
-	margin-bottom: 1em;
 }
 .categoryFilters {
 	display: flex;
@@ -157,7 +172,7 @@ li a:hover {
 	gap: 10px;
 }
 
-.btn-filter{
+.categoryFilters button{
 	min-width: 100px;
 	height: 37px;
 	font-family: 'Syne';
@@ -169,7 +184,7 @@ li a:hover {
 	padding: 10px;
 }
 
-.btn-filter:hover{
+.categoryFilters button:hover{
 	color: white;
 	background-color: #1D6154;
 }
@@ -190,7 +205,8 @@ li a:hover {
 }
 #contact {
 	width: 50%;
-margin: auto;
+	margin: auto;
+	margin-top: 60px;
 }
 #contact > * {
 	text-align: center;
@@ -234,7 +250,7 @@ input[type="submit"]{
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
-	margin: 2em
+	background-color: white;
 }
 
 /* style for login page*/
@@ -313,9 +329,53 @@ footer nav ul {
  	width:100%;
 	margin: 0px;
 }
-/* Edit mode */	
 
-/* Edit mode end*/
+/* Edit mode */ 
+.toolBarBox{
+	height: 50px;
+	width: 100vw;
+	background-color: rgb(0, 0, 0);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	gap:20px;
+}
+
+.adminToolBar span{
+	color: white;
+	position: relative;
+	bottom:3px;
+}
+
+.adminToolBar button{
+	align-items: center;
+	width: 216px;
+	height: 35px;
+	background-color: white;
+	border: solid 1px;
+	border-radius: 30px;
+}
+
+.galeryTitle{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap:10px;
+}
+
+.galeryTitle a{
+	position: relative;
+	bottom: 2px;
+}
+
+.modifyImg{
+	display: flex;
+	justify-content: flex-start;
+}
 
 
-
+   /* Edit mode end*/

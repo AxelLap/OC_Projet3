@@ -1,5 +1,3 @@
-
-
 document.querySelector(".logButton").addEventListener("click", async function(event){
     event.preventDefault();
 const url = "http://localhost:5678/api/users/login";
@@ -17,11 +15,10 @@ const response = await fetch(url, {
     }
 })
 if(response.ok){
-    userData = await response.json()
-    window.localStorage.setItem(userData, JSON.stringify(userData));
+    let userData = await response.json();
+    window.localStorage.setItem("token", JSON.stringify(userData));
     window.location.href="index.html";
     }else{
-    alert('Identifiant ou mote de passe incorect');
+    alert('Identifiant ou mot de passe incorect');
 }
 });
-
