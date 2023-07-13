@@ -19,6 +19,11 @@ if(response.ok){
     window.localStorage.setItem("token", JSON.stringify(userData));
     window.location.href="index.html";
     }else{
-    alert('Identifiant ou mot de passe incorect');
+    let errorMessage = document.querySelector(".ErrorMessage");
+    errorMessage.innerHTML = "";
+    let alertText = document.createElement("p");
+    alertText.className = "AlertText";
+    alertText.innerText = "E-mail ou mot de passe incorect";
+    errorMessage.appendChild(alertText);
 }
 });

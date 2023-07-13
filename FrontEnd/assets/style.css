@@ -36,7 +36,7 @@ header, body{
 footer {
 	background-color: white;
 	height: 5em;
-	width: 100%;
+	width: 100vw;
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
@@ -162,11 +162,11 @@ li a:hover {
 
 #portfolio h2 {
 	text-align: center;
+	margin-bottom: 40px;
 }
 .categoryFilters {
 	display: flex;
 	flex-direction: row;
-	margin-top: 40px;
 	margin-bottom: 40px;
 	justify-content: center;
 	gap: 10px;
@@ -191,7 +191,7 @@ li a:hover {
 
 
 
-.gallery {
+.galery {
 	width: 100%;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -199,7 +199,7 @@ li a:hover {
 	grid-row-gap: 20px;
 }
 
-.gallery img {
+.galery img {
 	width: 100%;
 
 }
@@ -285,10 +285,11 @@ footer nav ul {
 
 .logField input{
 	width: 365px;
-	height: 45px;
+	height: 35px;
 	border: none;
 	box-shadow: 1px 1px 5px 1px rgba(197,187,187,0.43);
 	margin-bottom: 10px;
+	padding: 10px;
 }
 
 .logButton{
@@ -330,6 +331,10 @@ footer nav ul {
 	margin: 0px;
 }
 
+.AlertText{
+	color: red;
+}
+
 /* Edit mode */ 
 .toolBarBox{
 	height: 50px;
@@ -367,15 +372,130 @@ footer nav ul {
 	gap:10px;
 }
 
-.galeryTitle a{
+.modalLinkCont{
+	position:relative;
+	bottom: 16px;
+}
+
+.openModalWindow{
 	position: relative;
 	bottom: 2px;
+	border: none;
+	background-color:#FFFEF8;
 }
 
 .modifyImg{
 	display: flex;
 	justify-content: flex-start;
 }
+/* Edit mode end*/
+
+/* Modale Style*/
+
+dialog{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top:0;
+	left:0;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(0, 0, 0, 0.8);
+	display: none;
+}
+
+.modalContent{
+	position: absolute;
+	width: 45vw;
+	height: auto;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 30px;
+}
+
+.closeButton{
+	height: 20px;
+	width: 20px;
+	background-color: white;
+	position: absolute;
+	top: 25px;
+	right: 30px;
+	border: solid 1px black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modalContent h1{
+	font-family: 'Work Sans';
+	color: black;
+	margin: 45px auto 45px auto;
+}
+
+.modalGalery{
+	height: auto;
+	width: 80%;
+	margin-bottom: 30px;
+	gap: 6px;
+	display: grid;
+	grid-template-columns: 19% 19% 19% 19% 19%;
+	grid-column-gap: 6px;
+	grid-row-gap: 6px;
+}
+
+.imgContainer{
+	position: relative;
+	height: 25%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.logosContainer{
+	display: flex;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	margin: 3px;
+	gap: 2px;
+
+}
 
 
-   /* Edit mode end*/
+hr{
+	color: #B3B3B3;
+	width: 420px;
+	height: 0px;
+	border: 1px solid #B3B3B3;
+	margin-bottom: 38px;
+}
+
+.addWorks{
+	width: 230px;
+	height: 37px;
+	font-family: 'Syne';
+	color: white;
+	background-color:#1D6154;
+	border: solid 1px;
+	border-radius: 30px;
+	padding: 10px;
+	margin-bottom: 23px;
+}
+
+.deleteAllWorks{
+	color: #D65353;
+	text-align: center;
+	font-weight: 400;
+	font-family: 'Syne';
+	font-size: 14px;
+	font-style: normal;
+	line-height: normal;
+}
+
+/* Modale Style End*/
