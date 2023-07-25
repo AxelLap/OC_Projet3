@@ -16,7 +16,7 @@ const response = await fetch(url, {
 })
 if(response.ok){
     let userData = await response.json();
-    window.localStorage.setItem("token", JSON.stringify(userData));
+    window.sessionStorage.setItem("token", JSON.stringify(userData));
     window.location.href="index.html";
     }else{
     let errorMessage = document.querySelector(".ErrorMessage");
@@ -27,3 +27,13 @@ if(response.ok){
     errorMessage.appendChild(alertText);
 }
 });
+
+
+
+
+
+
+
+
+
+

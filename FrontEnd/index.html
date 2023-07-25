@@ -24,58 +24,102 @@
 		<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
 		<nav>
 			<ul class="navPanel">
-				<li><a href="index.html">projets</a></li><!-- href="login.html" -->
+				<li><a href="index.html">projets</a></li>
 				<li><a href="#contact">contact</a></li>
-				<li><a id="loginLink" >login</a></li> 
+				<li><a id="loginLink" href="login.html">login</a></li>
 				<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 			</ul>
 		</nav>
 	</header>
 
 	<main>
-		<section id="introduction">
-			<figure class="sophieImg">
-				<img class="sophiePicture" src="./assets/images/sophie-bluel.png" alt="Sophie bluel Designer">
-			</figure>
-			<article>
-				<h2>Designer d'espace</h2>
-				<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison
-					finale du chantier.</p>
-				<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les
-					couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du
-					chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
-				<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG,
-					décorateur(trice)</p>
-			</article>
-		</section>
+		<div>
+			<section id="introduction">
+				<figure class="sophieImg">
+					<img class="sophiePicture" src="./assets/images/sophie-bluel.png" alt="Sophie bluel Designer">
+				</figure>
+				<article>
+					<h2>Designer d'espace</h2>
+					<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la
+						livraison
+						finale du chantier.</p>
+					<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les
+						couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du
+						chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
+					<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG,
+						décorateur(trice)</p>
+				</article>
+			</section>
 
 
 
-		<section id="portfolio">
-			<div class="galeryTitle">
-				<h2>Mes Projets</h2>
-			</div>
-			
-			<div class="categoryFilters">
-				<button class="filterBtn" id="all">Tous</button>
-			</div>	
-			</div>
-			<div class="galery"></div>
+			<section id="portfolio">
+				<div class="galeryTitle">
+					<h2>Mes Projets</h2>
+				</div>
+
+				<div class="categoryFilters">
+					<button class="filterBtn" id="all">Tous</button>
+				</div>
+		</div>
+		<div class="galery"></div>
 		</section>
 
 		<dialog id="modal">
-            <div class="modalContent" method="dialog">
-                <button  class="closeButton" value="cancel">
-                    <i class="fa-solid fa-xmark" style="color: #000000;"></i>
-                </button>
-                <h1>Gallerie photo</h1>
-                <div class="modalGalery">
-                </div>
-                <hr>
-                <button class="addWorks">Ajouter une photo</button>
-                <a class="deleteAllWorks">Supprimer la gallerie</a>
-            </div>
-        </dialog>
+			<!-- DeleteWorks -->
+			<div id="deleteWorksWindow" class="modalContent" method="dialog">
+				<button class="close button" value="cancel">
+					<i class="fa-solid fa-xmark" style="color: #000000;"></i>
+				</button>
+				<h1>Gallerie photo</h1>
+				<div class="addWorkMessage"></div>
+				<div class="modalGalery">
+				</div>
+				<hr>
+				<button class="addWorks">Ajouter une photo</button>
+				<a class="deleteAllWorks">Supprimer la gallerie</a>
+			</div>
+			<!-- CreateWorks Boutons et titre-->
+			<div id="createWorkWindow" class="modalContent" method="dialog">
+				<button class="close button" value="cancel">
+					<i class="fa-solid fa-xmark" style="color: #000000;"></i>
+				</button>
+				<button class="return button">
+					<i class="fa-solid fa-arrow-left" style="color: #000000;"></i>
+				</button>
+				<h1>Ajout photo</h1>
+				<form id="newWorkForm" method="post" enctype="multipart/form-data" name="submitNewWork">
+					<!-- Ajout img -->
+					<div class="uploadImg">
+						<img class="logo" src="./assets/icons/pictureLogo.svg">
+						<label for="addPicBtn" class="addPicBtnStyle">+ Ajouter photo</label>
+						<input type="file" name="picture" id="addPicBtn" onchange="previewPicture(this)"
+							style="display: none;" required>
+						<p class="requiredFormat">jpg. png : 4mo max</p>
+						<div class="alertContainer"></div>
+						<div>
+							<img src="#" id="image" style="display: none;">
+							<span class="discardCross">x</span>
+						</div>
+					</div>
+
+					<div id="titleField" class="field">
+						<label for="title">Titre</label>
+						<input type="text" name="title" id="title" required>
+					</div>
+					<div id="categoryField" class="field">
+						<label for="categoryList">Catégorie</label>
+						<select name="categoryList" id="categoryList" required>
+							<option value=""></option>
+						</select>
+					</div>
+					<div class="ErrorMessage"></div>
+					<hr>
+					<button class="validateAddBtn" type="submit">Valider</button>
+					<div class="ErrorMessage"></div>
+				</form>
+			</div>
+		</dialog>
 
 		<section id="contact">
 			<h2>Contact</h2>

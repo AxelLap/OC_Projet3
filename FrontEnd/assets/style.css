@@ -63,17 +63,21 @@ table {
 }
 /** end reset css**/
 body {
-	max-width: 1140px;
-	margin:auto;
+	
 	margin-top: 60px;
 	font-size: 14px;
 	font-family: 'Work Sans';
 }
 
+main{
+	max-width: 1140px;
+	margin:auto;
+}
+
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0
+	margin: 50px;
 }
 
 nav a{
@@ -201,7 +205,8 @@ li a:hover {
 
 .galery img {
 	width: 100%;
-
+	object-fit: cover;
+	min-height: 491px;
 }
 #contact {
 	width: 50%;
@@ -410,32 +415,40 @@ dialog{
 
 .modalContent{
 	position: absolute;
-	width: 45vw;
+	width: 41vw;
 	height: auto;
 	background-color: white;
-	display: flex;
 	flex-direction: column;
 	align-items: center;
 	padding: 30px;
+	
 }
 
-.closeButton{
+#deleteWorksWindow{
+	display: none;
+}
+
+.button{
 	height: 20px;
 	width: 20px;
 	background-color: white;
-	position: absolute;
-	top: 25px;
-	right: 30px;
-	border: solid 1px black;
+	border: none;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
+.close{
+	position: absolute;
+	top: 25px;
+	right: 30px;
+}
+
+
 .modalContent h1{
 	font-family: 'Work Sans';
 	color: black;
-	margin: 45px auto 45px auto;
+	margin: 45px auto 22px auto;
 }
 
 .modalGalery{
@@ -497,5 +510,141 @@ hr{
 	font-style: normal;
 	line-height: normal;
 }
+
+/*CreateWorks*/
+
+.return{
+	position: absolute;
+	top: 25px;
+	left: 30px;
+}
+
+#createWorkWindow{
+	display: none;
+}
+
+.uploadImg{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #E8F1F6;
+	height: 169px;
+	width: 420px;
+	margin-bottom: 30px;
+}
+
+.uploadImg div{
+	display: flex;
+	flex-direction: row;
+}
+
+.logo{
+	position: relative;
+	margin-top: 15px;
+	z-index: 1;
+}
+
+.addPicBtnStyle{
+	display: flex;
+	color: #306685;
+	align-items: center;
+	justify-content: center;
+	width: 216px;
+	height: 35px;
+	background-color: #CBD6DC;
+	border: none;
+	border-radius: 30px;
+	margin-top: 15px;
+	margin-bottom: 7px;
+}
+
+.wrongTypeAlert{
+	padding-top: 5px;
+	color: red;
+}
+
+#createWorkWindow form{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.field{
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	margin: 10px;
+	gap: 10px;
+}
+
+#titleField input{
+	background-color: white;
+	width: 420px;
+	height: 40px;
+	border: none;
+	box-shadow: 1px 1px 5px 1px rgba(197,187,187,0.43);
+	margin-bottom: 10px;
+	padding: 0px;
+}
+
+#categoryField select{
+	background-color: white;
+	width: 420px;
+	height: 40px;
+	border: none;
+	box-shadow: 1px 1px 5px 1px rgba(197,187,187,0.43);
+	margin-bottom: 10px;
+	padding: 0px;
+}
+
+.validateAddBtn{
+	color:white;
+	align-items: center;
+	width: 216px;
+	height: 35px;
+	background-color:gray;
+	border: none;
+	border-radius: 30px;
+	margin-top: 15px;
+	margin-bottom: 7px;
+}
+
+.filledFormBtn{
+	background-color: #1D6154;
+}
+
+
+#image{
+	width: 120px;
+	height: 169px;
+}
+
+.discardCross{
+	position: relative;
+	z-index: 2;
+	width: 10px;
+	left: 110px;
+	margin: 0px;
+	display:none;
+	font-size: large;
+} 
+
+.addWorkMessage{
+	color: #1D6154;
+	margin-bottom: 20px;
+}
+
+.modaleImg{
+	width: 100%;
+	object-fit: cover;
+	min-height: 140px;
+}
+
+.new{
+	color: #1D6154;
+	font-weight: bold;
+}
+	
 
 /* Modale Style End*/
